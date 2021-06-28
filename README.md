@@ -2,7 +2,7 @@
 
 # javascrtip
 <detail>
- * counter - app
+ * counter app
  * background color change app
  * calculator
  * loan calculator
