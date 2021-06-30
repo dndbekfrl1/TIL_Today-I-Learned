@@ -5,7 +5,7 @@
 - counter app
 
   - 더하고 빼는 카운터
-    <img width="467" alt="스크린샷 2021-06-30 오후 9 54 57" src="https://user-images.githubusercontent.com/39056388/123963869-d6411c80-d9ed-11eb-8e5e-d19a97c0899f.png"width="30%">
+    <img width="467" alt="스크린샷 2021-06-30 오후 9 54 57" src="https://user-images.githubusercontent.com/39056388/123963869-d6411c80-d9ed-11eb-8e5e-d19a97c0899f.png" width="30%">
 
 - background color change app
 
