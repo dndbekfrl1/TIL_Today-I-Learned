@@ -1,3 +1,4 @@
+let pay_method = 0;
 let amount = 0;
 let year = 0;
 let month = 0;
@@ -9,24 +10,36 @@ let monthly_payment_detail = []; //월상환금 디테일 정보 리스트
 
 /**
  * TODO
- * payment method 값 가져오기
  * css 수정
  */
-const payment_method = document.getElementById("payment_method").value;
+let payment_method = document.getElementById("payment_method");
 const calculate = document.getElementById("calculate");
 const monthly_payment_res = document.getElementById("monthly_pament");
 const total_payment_res = document.getElementById("total_payment");
 const total_interest_res = document.getElementById("total_interest");
 
+function update() {
+  pay_method = payment_method.options[payment_method.selectedIndex].value;
+}
+update();
+
 calculate.addEventListener("click", () => {
-  console.log(payment_method);
   amount = Number(document.getElementById("amount").value);
   year = Number(document.getElementById("year").value);
   loan_interest_year = Number(document.getElementById("rate").value) * 0.01;
   month = year * 12;
   loan_interest = loan_interest_year / 12;
 
-  levelPayment();
+  if (pay_method == 0) {
+    levelPayment();
+  } else if (pay_method == 1) {
+    principalEquality();
+  } else {
+    expirationDate();
+  }
+  monthly_payment_res.innerHTML = monthly_payment;
+  total_payment_res.innerHTML = total_repayment;
+  //   total_interest_res.innerHTML = monthly_payment_detail.map();
 });
 
 //원리금균등
@@ -75,5 +88,5 @@ function principalEquality() {
 //만기일시
 function expirationDate() {
   loan_interest = ((amount * loan_interest_year) / 12) * month;
-  total_repayment = loan_interest + amount;
+  total_repayment = Math.ceil(loan_interest + amount);
 }

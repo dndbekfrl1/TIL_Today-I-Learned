@@ -14,7 +14,7 @@
             <div class="input_container">
                 <div class="row">
                     <div class="subtitle">Repayment Method</div>
-                    <select id="payment_method">
+                    <select id="payment_method" onChange="update()" >
                         <option value="0">level payment</option>
                         <option value="1">principal equality</option>
                         <option value="2">expiration date</option>
@@ -41,11 +41,11 @@
                 <div class="row">
                     <div class="subtitle">Results</div>
                     <div class="results">
-                        <div>Monthly Payment</div>
+                        <div class="subtitle">Monthly Payment</div>
                         <div id="monthly_pament">1000</span>
-                        <div>Total Payment</div>
+                        <div class="subtitle">Total Payment</div>
                         <div id="total_payment">1000</span>
-                        <div>Total Interest</div>
+                        <div class="subtitle">Total Interest</div>
                         <div id="total_interest">1000</span>
                     </div>
                 </div>
