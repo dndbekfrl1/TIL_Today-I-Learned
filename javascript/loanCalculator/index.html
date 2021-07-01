@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>loan calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div id="title">Loan Calculator</div>
+        <div class="contents_container">
+            <div class="input_container">
+                <div class="row">
+                    <div class="subtitle">Repayment Method</div>
+                    <select id="payment_method">
+                        <option value="0">level payment</option>
+                        <option value="1">principal equality</option>
+                        <option value="2">expiration date</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="subtitle">Amount</div>
+                    <input id="amount">
+                </div>
+                <div class="row">
+                    <div class="subtitle">Interest Rate</div>
+                    <input id="rate">
+                </div>
+                <div class="row">
+                    <div class="subtitle">Years to pay</div>
+                    <input id="year">
+                </div>
+                <div class="row">
+                    <button id="calculate">calculate</button>
+                </div> 
+                
+            </div>
+            <div class="results_container">
+                <div class="row">
+                    <div class="subtitle">Results</div>
+                    <div class="results">
+                        <div>Monthly Payment</div>
+                        <div id="monthly_pament">1000</span>
+                        <div>Total Payment</div>
+                        <div id="total_payment">1000</span>
+                        <div>Total Interest</div>
+                        <div id="total_interest">1000</span>
+                    </div>
+                </div>
+        </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
