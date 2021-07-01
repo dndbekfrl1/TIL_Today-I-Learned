@@ -23,7 +23,20 @@ function update() {
 }
 update();
 
+function initVariable() {
+  pay_method = 0;
+  amount = 0;
+  year = 0;
+  month = 0;
+  loan_interest_year = 0;
+  loan_interest = 0;
+  total_repayment = 0;
+  monthly_payment = 0;
+  monthly_payment_detail = [];
+}
+
 calculate.addEventListener("click", () => {
+  initVariable();
   amount = Number(document.getElementById("amount").value);
   year = Number(document.getElementById("year").value);
   loan_interest_year = Number(document.getElementById("rate").value) * 0.01;
@@ -72,6 +85,7 @@ function levelPayment() {
 function principalEquality() {
   monthly_payment = amount / month;
   for (let i = 0; i < month; i++) {
+    let detail = {};
     let balances = 0;
     if (i == 0) {
       balances = amount;
@@ -82,6 +96,7 @@ function principalEquality() {
     detail["principle_payment"] = monthly_payment;
     detail["loan"] = loan;
     detail["balances"] = balances - monthly_payment;
+    monthly_payment_detail.push(detail);
   }
 }
 
