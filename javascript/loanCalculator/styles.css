@@ -8,13 +8,15 @@ body {
 
 .container {
   background-color: white;
-  width: 800px;
-  height: auto;
+  width: 900px;
+  height: 100%;
   border-radius: 20px;
   padding: 80px 20px;
 }
 .contents_container {
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: row;
   justify-content: center;
 }
@@ -66,6 +68,17 @@ button {
   border-radius: 5px;
 }
 
-.results {
-  /* display: none; */
+.results_container {
+  visibility: hidden;
+}
+.results_container > .row > .subtitle {
+  margin-bottom: 30px;
+}
+
+table {
+  text-align: center;
+}
+tr,
+td {
+  padding: 4px;
 }

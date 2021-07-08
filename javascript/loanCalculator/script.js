@@ -17,6 +17,9 @@ const calculate = document.getElementById("calculate");
 const monthly_payment_res = document.getElementById("monthly_pament");
 const total_payment_res = document.getElementById("total_payment");
 const total_interest_res = document.getElementById("total_interest");
+const results_container =
+  document.getElementsByClassName("results_container")[0];
+const detail_container = document.getElementsByClassName("detail_container")[0];
 
 function update() {
   pay_method = payment_method.options[payment_method.selectedIndex].value;
@@ -40,6 +43,12 @@ calculate.addEventListener("click", () => {
   amount = Number(document.getElementById("amount").value);
   year = Number(document.getElementById("year").value);
   loan_interest_year = Number(document.getElementById("rate").value) * 0.01;
+
+  if (amount == 0 || year == 0 || loan_interest_year == 0) {
+    alert("Please enter value");
+    return;
+  }
+
   month = year * 12;
   loan_interest = loan_interest_year / 12;
 
@@ -50,9 +59,10 @@ calculate.addEventListener("click", () => {
   } else {
     expirationDate();
   }
-  monthly_payment_res.innerHTML = monthly_payment;
-  total_payment_res.innerHTML = total_repayment;
-  //   total_interest_res.innerHTML = monthly_payment_detail.map();
+  monthly_payment_res.innerHTML = monthly_payment + "$";
+  total_payment_res.innerHTML = total_repayment + "$";
+  createDetailElement(monthly_payment_detail);
+  results_container.style.visibility = "visible";
 });
 
 //원리금균등
@@ -62,7 +72,6 @@ function levelPayment() {
 
   monthly_payment = Math.ceil(numerator / denominator);
   total_repayment = monthly_payment * month;
-  console.log(total_repayment);
   for (let i = 0; i < month; i++) {
     let detail = {}; //월상환금 디테일 정보
     let balances = 0;
@@ -77,8 +86,6 @@ function levelPayment() {
     detail["balances"] = Math.ceil(balances - monthly_payment); //대출잔금
     monthly_payment_detail.push(detail);
   }
-
-  console.log(monthly_payment_detail.length);
 }
 
 //원금균등
@@ -104,4 +111,31 @@ function principalEquality() {
 function expirationDate() {
   loan_interest = ((amount * loan_interest_year) / 12) * month;
   total_repayment = Math.ceil(loan_interest + amount);
+}
+
+function createDetailElement(detail) {
+  let detaildescribe = "";
+  let detailDiv = document.getElementById("detail");
+  for (let i = 0; i < detail.length; i++) {
+    let principle_payment = detail[i].principle_payment + "$";
+    let loan = detail[i].loan + "$";
+    let balances = detail[i].balances + "$";
+    let detaildiv = `
+    <tr>
+      <td>${i}</td>
+      <td>${loan}</td>
+      <td>${principle_payment}</td>
+      <td>${balances}</td>
+    </tr`;
+    detaildescribe += detaildiv;
+  }
+  let table = `
+  <table>
+    <th>Round</th>
+    <th>Loan</th>
+    <th>Principle Payment</th>
+    <th>Balances</th>
+    ${detaildescribe}
+  </table>`;
+  detailDiv.innerHTML = table;
 }
