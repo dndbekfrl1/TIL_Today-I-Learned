@@ -16,10 +16,9 @@ let payment_method = document.getElementById("payment_method");
 const calculate = document.getElementById("calculate");
 const monthly_payment_res = document.getElementById("monthly_pament");
 const total_payment_res = document.getElementById("total_payment");
-const total_interest_res = document.getElementById("total_interest");
 const results_container =
   document.getElementsByClassName("results_container")[0];
-const detail_container = document.getElementsByClassName("detail_container")[0];
+const detail_container = document.getElementById("detail");
 
 function update() {
   pay_method = payment_method.options[payment_method.selectedIndex].value;
@@ -27,7 +26,6 @@ function update() {
 update();
 
 function initVariable() {
-  pay_method = 0;
   amount = 0;
   year = 0;
   month = 0;
@@ -36,6 +34,9 @@ function initVariable() {
   total_repayment = 0;
   monthly_payment = 0;
   monthly_payment_detail = [];
+  monthly_payment_res.innerText = 0;
+  total_payment_res.innerText = 0;
+  detail_container.innerHTML = "no data";
 }
 
 calculate.addEventListener("click", () => {
@@ -59,10 +60,18 @@ calculate.addEventListener("click", () => {
   } else {
     expirationDate();
   }
-  monthly_payment_res.innerHTML = monthly_payment + "$";
-  total_payment_res.innerHTML = total_repayment + "$";
-  createDetailElement(monthly_payment_detail);
-  results_container.style.visibility = "visible";
+
+  if (pay_method == 2) {
+    results_container.style.visibility = "visible";
+    detail_container.style.visibility = "hidden";
+    total_payment_res.innerHTML = total_repayment + "$";
+  } else {
+    results_container.style.visibility = "visible";
+    detail_container.style.visibility = "visible";
+    monthly_payment_res.innerHTML = monthly_payment + "$";
+    total_payment_res.innerHTML = total_repayment + "$";
+    createDetailElement(monthly_payment_detail);
+  }
 });
 
 //원리금균등
@@ -81,8 +90,8 @@ function levelPayment() {
       balances = monthly_payment_detail[i - 1].balances;
     }
     let loan = Math.ceil(balances * loan_interest);
-    detail["principle_payment"] = monthly_payment - loan;
-    detail["loan"] = loan;
+    detail["principle_payment"] = Math.ceil(monthly_payment - loan);
+    detail["loan"] = Math.ceil(loan);
     detail["balances"] = Math.ceil(balances - monthly_payment); //대출잔금
     monthly_payment_detail.push(detail);
   }
@@ -90,19 +99,20 @@ function levelPayment() {
 
 //원금균등
 function principalEquality() {
-  monthly_payment = amount / month;
+  monthly_payment = Math.ceil(amount / month);
+  total_repayment = monthly_payment * month;
   for (let i = 0; i < month; i++) {
     let detail = {};
     let balances = 0;
     if (i == 0) {
       balances = amount;
     } else {
-      balances = monthly_payment_detail[i - 1].balances;
+      balances = Math.ceil(monthly_payment_detail[i - 1].balances);
     }
     let loan = balances * loan_interest;
-    detail["principle_payment"] = monthly_payment;
-    detail["loan"] = loan;
-    detail["balances"] = balances - monthly_payment;
+    detail["principle_payment"] = Math.ceil(monthly_payment);
+    detail["loan"] = Math.ceil(loan);
+    detail["balances"] = Math.ceil(balances - monthly_payment);
     monthly_payment_detail.push(detail);
   }
 }
@@ -114,8 +124,8 @@ function expirationDate() {
 }
 
 function createDetailElement(detail) {
+  if (detail.length == 0) return;
   let detaildescribe = "";
-  let detailDiv = document.getElementById("detail");
   for (let i = 0; i < detail.length; i++) {
     let principle_payment = detail[i].principle_payment + "$";
     let loan = detail[i].loan + "$";
@@ -137,5 +147,5 @@ function createDetailElement(detail) {
     <th>Balances</th>
     ${detaildescribe}
   </table>`;
-  detailDiv.innerHTML = table;
+  detail_container.innerHTML = table;
 }
