@@ -17,6 +17,8 @@
   - 계산기
 
 - loan calculator
+  <img width="1680" alt="스크린샷 2021-07-09 오전 2 05 42" src="https://user-images.githubusercontent.com/39056388/124963010-438e2680-e05a-11eb-945a-4d093dc710b7.png">
+<img width="1680" alt="스크린샷 2021-07-09 오전 2 05 32 1" src="https://user-images.githubusercontent.com/39056388/124963023-4721ad80-e05a-11eb-9266-692bc9c228e4.png">
 - mobile number validator
 - random quote generator
 - notes app project
