@@ -79,6 +79,7 @@ class App extends Component {
                 _content[i] = { id: _id, title: _title, desc: _desc };
                 break;
               }
+              i += 1;
             }
             this.setState({
               contents: _content,
