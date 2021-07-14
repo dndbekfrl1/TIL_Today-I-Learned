@@ -5,6 +5,7 @@ import InputSample from "./InputSample";
 import InputSample2 from "./InputSample2";
 import UserList from "./UserList";
 import CreateUser from "./CreateUser";
+import UseState from "./UseState";
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -84,6 +85,8 @@ function App() {
         onRemove={onRemove}
         onToggle={onToggle}
       ></UserList>
+
+      <UseState />
     </>
   );
 }
