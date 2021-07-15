@@ -63,6 +63,7 @@ function reducer(state, action) {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const nextId = useRef(4);
+  const count = useMemo(() => countActiveUsers(users), [users]);
   const { users } = state;
   const [{ username, email }, onChange, reset] = useInputs({
     username: "",
@@ -78,6 +79,7 @@ function App() {
         email,
       },
     });
+    reset();
     nextId.current += 1;
   }, [username, email]);
 
@@ -104,7 +106,7 @@ function App() {
         onCreate={onCreate}
       />
       <UserList users={users} onToggle={onToggle} onRemove={onRemove} />
-      <div>활성자 수 :0</div>
+      <div>활성자 수 :{count}</div>
     </>
   );
 }
