@@ -1,45 +1,12 @@
 import "./App.css";
-import React, { Component, useRef, useState } from "react";
-import ReactDOM from "react-dom";
-import InputSample from "./InputSample";
-import InputSample2 from "./InputSample2";
+import React, { useRef, useState, useMemo, useCallback } from "react";
 import UserList from "./UserList";
 import CreateUser from "./CreateUser";
-import UseState from "./UseState";
 
+function countActiveUsers(users) {
+  return users.filter((user) => user.active).length;
+}
 function App() {
-  const [inputs, setInputs] = useState({
-    username: "",
-    email: "",
-  });
-  const nextId = useRef(4);
-  const { username, email } = inputs;
-  //username과 email은 onChage setInputs가 호출될때마다 갱신되는건가?? -> 네 그렇습니다.
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
-    console.log("onchange!!", username, email);
-  };
-
-  const onCreate = () => {
-    const user = {
-      id: nextId.current,
-      username,
-      email,
-    };
-    setUsers([...users, user]);
-
-    setInputs({
-      username: "",
-      email: "",
-    });
-
-    nextId.current += 1;
-  };
-
   const [users, setUsers] = useState([
     {
       id: 1,
@@ -61,17 +28,50 @@ function App() {
     },
   ]);
 
-  const onRemove = (id) => {
-    setUsers(users.filter((user) => user.id !== id));
-  };
-  const onToggle = (id) => {
-    setUsers(
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+  });
+  const nextId = useRef(4);
+  const { username, email } = inputs;
+  //username과 email은 onChage setInputs가 호출될때마다 갱신되는건가?? -> 네 그렇습니다.
+  const onChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setInputs((inputs) => ({
+      ...inputs,
+      [name]: value,
+    }));
+  }, []);
+
+  const onCreate = useCallback(() => {
+    const user = {
+      id: nextId.current,
+      username,
+      email,
+    };
+    setUsers((users) => users.concat(user));
+
+    setInputs({
+      username: "",
+      email: "",
+    });
+
+    nextId.current += 1;
+    console.log("oncreate usecallback", username);
+  }, [username, email]); //users, username, email 셋 다 바뀔때 호출되는건가?-> 그건아닌데 갱신에 문제가 생김. deps[]에서 값을 참조해야 정상적인 작동을 함 [users]일때, id값만 갱신 [users,username]일 때, users, username 만
+
+  const onRemove = useCallback((id) => {
+    setUsers((users) => users.filter((user) => user.id !== id));
+  }, []);
+  const onToggle = useCallback((id) => {
+    setUsers((users) =>
       users.map((user) =>
         user.id === id ? { ...user, active: !user.active } : user
       )
     );
-  };
+  }, []);
 
+  const count = useMemo(() => countActiveUsers(users), [users]);
   return (
     <>
       <CreateUser
@@ -85,8 +85,7 @@ function App() {
         onRemove={onRemove}
         onToggle={onToggle}
       ></UserList>
-
-      <UseState />
+      <div>활성사용자 수 :{count}</div>
     </>
   );
 }
