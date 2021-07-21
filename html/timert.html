@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src ="../../../../jina/Desktop/짤방/1613476649.jpg" id="img" onmouseover="startTimer(3000)" onmouseout="clearTimer()"/>
+    <div><span id="span" style="background-color: yellow">자동회전하는 텍스트</span></div>
+    <script>
+        let span = document.getElementById("span");
+        let timerID2=setInterval(doRotate(),200);
+        span.onclick=function(e){
+            clearInterval(timerID2)
+        }
+        function doRotate(){
+            console.log("dorotate")
+            let str = span.innerHTML;
+            let firstChar = str.substr(0,1)
+            let remains = str.substr(1,str.length-1);
+            str = remains+firstChar;
+            span.innerHTML=str;
+        }
+
+        let timerID=null
+        function startTimer(time){
+            timerID=setTimeout("loadURL('http://www.naver.com",time);
+            document.getElementById("img").title = "타이머 작동 시작";
+
+        }
+        function clearTimer(){
+            if(timerID!=null){
+                clearTimeout(timerID)
+            }
+        }
+        function loadURL(url){
+            console.log(urlß)
+            window.location=url
+        }
+    </script>
+</body>
+</html>
