@@ -56,10 +56,13 @@ function reducer(state, action) {
   }
 }
 export const UserDispatch = React.createContext(null);
+
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const { users } = state;
+
+  console.log(state);
+  console.log(dispatch);
 
   const count = useMemo(() => countActiveUsers(users), [users]);
   return (

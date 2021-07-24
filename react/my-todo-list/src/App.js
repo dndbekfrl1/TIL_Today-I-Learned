@@ -1,25 +1,27 @@
-import "./App.css";
 import { createGlobalStyle } from "styled-components";
-import TodoTemplate from "./components/TodoTemplate";
-import TodoHead from "./components/TodoHead";
+import TodoListTemplate from "./components/TodoListTemplate";
+import TodoHeader from "./components/TodoHeader";
 import TodoList from "./components/TodoList";
 import TodoCreate from "./components/TodoCreate";
 import { TodoProvider } from "./components/TodoContext";
 
 const GlobalStyle = createGlobalStyle`
 body{
-  background:#e9ecef;
+  background: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }`;
 
 function App() {
   return (
     <TodoProvider>
       <GlobalStyle />
-      <TodoTemplate>
-        <TodoHead></TodoHead>
-        <TodoList></TodoList>
+      <TodoListTemplate>
+        <TodoHeader />
+        <TodoList />
         <TodoCreate />
-      </TodoTemplate>
+      </TodoListTemplate>
     </TodoProvider>
   );
 }
