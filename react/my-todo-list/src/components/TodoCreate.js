@@ -1,43 +1,52 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { useTodoNextID, useTodoDispatch } from "./TodoContext";
+import useInputs from "./useInputs";
 
-function TodoCreate() {
+function TodoCreate({ createTodo }) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, onChange2, reset] = useInputs("안녕");
   const dispatch = useTodoDispatch();
   const nextID = useTodoNextID();
   const onToggle = () => {
     setOpen(!open);
   };
   const onChage = (e) => {
-    setValue(e.target.value);
+    //setValue(e.target.value);
   };
-  const onSubmit = (e) => {
-    e.preventDefault();
-    dispatch({
-      type: "CREATE",
-      todo: {
-        id: nextID.current,
-        text: value,
-        done: false,
-      },
-    });
-    nextID.current += 1;
-    setValue("");
-    setOpen(false);
-  };
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
 
-  console.log("value", value);
+  //   createTodo({ id: nextID.current, text: value });
+  //   dispatch({
+  //     type: "CREATE",
+  //     todo: {
+  //       id: nextID.current,
+  //       text: value,
+  //       done: false,
+  //     },
+  //   });
+  //   nextID.current += 1;
+  //   setValue("");
+  //   setOpen(false);
+  // };
+
   return (
     <>
       {open && (
         <InsertFormWrapper>
-          <InsertForm onSubmit={onSubmit}>
+          <InsertForm
+            onSubmit={(e) => {
+              e.preventDefault();
+              createTodo({ id: nextID.current, text: value, done: false });
+              // setOpen(false);
+              reset();
+            }}
+          >
             <Input
               placeholder="할 일을 입력 후, 엔터키를 누르세요."
               autoFocus={true}
-              onChange={onChage}
+              onChange={onChange2}
               value={value}
             ></Input>
           </InsertForm>

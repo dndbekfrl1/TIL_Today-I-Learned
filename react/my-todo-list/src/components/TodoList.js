@@ -3,10 +3,7 @@ import styled from "styled-components";
 import TodoItem from "./TodoItem";
 import { useTodoState } from "./TodoContext";
 
-function TodoList() {
-  const todos = useTodoState();
-  console.log("todos", todos);
-
+function TodoList({ todos, deleteTodo, toggleTodo }) {
   return (
     <TodoListBlock>
       {todos.map((todo) => (
@@ -15,6 +12,8 @@ function TodoList() {
           id={todo.id}
           done={todo.done}
           text={todo.text}
+          deleteTodo={deleteTodo}
+          toggleTodo={toggleTodo}
         ></TodoItem>
       ))}
     </TodoListBlock>

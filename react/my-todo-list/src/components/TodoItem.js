@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { useTodoState, useTodoDispatch } from "./TodoContext";
 
-function TodoItem({ id, done, text }) {
+function TodoItem({ id, done, text, deleteTodo, toggleTodo }) {
   const dispatch = useTodoDispatch();
   const onToggle = () => {
     dispatch({ type: "TOGGLE", id });
@@ -12,11 +12,22 @@ function TodoItem({ id, done, text }) {
   };
   return (
     <TodoItemBlock>
-      <Check onClick={onToggle} done={done}>
+      <Check
+        onClick={() => {
+          toggleTodo(id);
+        }}
+        done={done}
+      >
         V
       </Check>
       <Text done={done}>{text}</Text>
-      <Delete onClick={onRemove}>🗑</Delete>
+      <Delete
+        onClick={() => {
+          deleteTodo(id);
+        }}
+      >
+        🗑
+      </Delete>
     </TodoItemBlock>
   );
 }
