@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+        .top{
+            padding: 40px 0;
+        }
+
+        h3{
+            margin-top: 100px;
+        }
+
+        .parent{
+            display: flex;
+            border: 2px solid black;
+            width: 400px;
+            height: auto;
+            padding-top: 5px ;
+            padding-right: 5px;
+           
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin-left:5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ex > li{
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        .item1{
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin-left:5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .item2{
+            width: 20px;
+            height: 50px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin-left:5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .item3{
+            width: 60px;
+            height: 50px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin-left:5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
+        .itemb{
+            width: 50px;
+            height: 80px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin-left:5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="top">
+
+
+    <h1>Flex</h1>
+    <li>stretching multiple columns and rows of content across parent container</li>
+
+    <li> 각 container은 flex-start와 flex-end로 이뤄졌다.</li>
+
+    <li>justify - horizontal 또는 vertical로 items을 정렬할 수 있음</li>
+    
+
+    <ul class="ex">
+        <h3>container와 item의 크기는 동일</h3>
+        <li>
+            <div class="parent">
+                <div class="item"></div>
+            </div>
+        </li>
+        <li>
+            <div class="parent">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </li>
+        <h3>Direction: default- row, left -> right</h3>
+        <li>
+            flex-direction: row-reverse
+            <div style="flex-direction: row-reverse;" class="parent">
+                <div class="item"></div>
+            </div>
+        </li>
+        <li>
+            flex-direction: column
+            <div style="flex-direction: column; height: 160px;" class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+            </div>
+        </li>
+        <li>
+            flex-direction: column-reverse
+            <div style="flex-direction: column-reverse; height: 160px;" class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+            </div>
+        </li>
+        <h3>Wrap: 아이템들이 부모 container에 넘칠 때 정의 </h3>
+        <li>
+            <div  class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+            </div>
+        </li>
+        <li>
+            flex-wrap: wrap
+            <div style="flex-wrap: wrap;" class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+            </div>
+        </li>
+
+        <h3>Flow: flex-direction과 flex-wrap을 한번에 정의가능</h3>
+        <li>
+            flex-flow: row wrap
+            <div style=" flex-flow: row wrap;" class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+            </div>
+        </li>
+     
+        <li>
+            flex-flow: row wrap-reverse
+            <div style=" flex-flow: row wrap-reverse;" class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+            </div>
+        </li>
+
+
+        <li>
+            flex-flow: row wrap;<br/>
+            justify-content: space-between;
+            <div style="flex-flow: row wrap;
+            justify-content: space-between;" class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+            </div>
+        </li>
+
+        <li>
+            flex-flow: row-reverse wrap;
+            <div style="flex-flow: row-reverse wrap;
+          " class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+            </div>
+        </li>
+        <li>
+            flex-flow: row wrap;<br/>
+            justify-content: space-between;
+            <div style="flex-flow: row wrap; justify-content: space-between;
+          " class="parent">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+        </li>
+
+        <h3>justify-content</h3>
+        <li>
+            justify-content: flex-end;
+            <div style="justify-content:flex-end;" class="parent">
+                <div class="item1">1</div>
+                <div class="item2">2</div>
+                <div class="item3">3</div>
+              </div>
+        </li>
+        <li>
+            justify-content: center;
+            <div style="justify-content: center;" class="parent">
+                <div class="item1">1</div>
+                <div class="item2">2</div>
+                <div class="item3">3</div>
+              </div>
+        </li>
+        <li>
+            justify-content: space-between;
+            <div style="justify-content:space-between;" class="parent">
+                <div class="item1">1</div>
+                <div class="item2">2</div>
+                <div class="item3">3</div>
+              </div>
+        </li>
+        <li>
+            justify-content: space-around;
+            <div style="justify-content:space-around;" class="parent">
+                <div class="item1">1</div>
+                <div class="item2">2</div>
+                <div class="item3">3</div>
+              </div>
+        </li>
+        <li>
+            justify-content: stretch;
+            <div style="justify-content:stretch;" class="parent">
+                <div class="item1">1</div>
+                <div class="item2">2</div>
+                <div class="item3">3</div>
+              </div>
+        </li>
+        
+        <li>
+            justify-content: space-evenly - all spaces are same
+            <div style="justify-content:space-evenly;" class="parent">
+                  <div class="item1">1</div>
+                  <div class="item2">2</div>
+                  <div class="item3">3</div>
+              </div>
+        </li>
+
+        <h3>aling-items - items의 수평선을 정의</h3>
+        <li>
+            align-items: flex-start - default
+            <div style="align-items: flex-start;" class="parent">
+                  <div class="item">a</div>
+                  <div class="itemb">b</div>
+                  <div class="item">c</div>
+                  <div class="item">d</div>
+                  <div class="item">e</div>
+              </div>
+        </li>
+        <li>
+            align-items: flex-end 
+            <div style="align-items: flex-end;" class="parent">
+                  <div class="item">a</div>
+                  <div class="itemb">b</div>
+                  <div class="item">c</div>
+                  <div class="item">d</div>
+                  <div class="item">e</div>
+              </div>
+        </li>
+        <li>
+            align-items: center
+            <div style="align-items: center;" class="parent">
+                  <div class="item">a</div>
+                  <div class="itemb">b</div>
+                  <div class="item">c</div>
+                  <div class="item">d</div>
+                  <div class="item">e</div>
+              </div>
+        </li>
+        <li>
+            align-items: stretch 
+            <div style="align-items: stretch;" class="parent">
+                  <div class="item">a</div>
+                  <div class="itemb">b</div>
+                  <div class="item">c</div>
+                  <div class="item">d</div>
+                  <div class="item">e</div>
+              </div>
+        </li>
+        <li>
+            align-items: baseline 
+            <div style="align-items: baseline;" class="parent">
+                  <div class="item">a</div>
+                  <div class="itemb">b</div>
+                  <div class="item">c</div>
+                  <div class="item">d</div>
+                  <div class="item">e</div>
+              </div>
+        </li>
+    </ul>
+ 
+
+</div>
+</body>
+</html>
