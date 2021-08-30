@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Position</title>
     <style>
+        body{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction: column;
+        }
         .attribute > .attr{
             font-weight: bold;
             background-color: black;
@@ -57,25 +63,220 @@
     
 </head>
 <body style="background-color: black;">
-    <div class="wrapper" style="background-color: white;
+    <div
+    class="wrapper"
+    style="background-color: white;
     padding: 4px 10px;
     border-radius: 20px;
-    padding-bottom: 30px;">
-        <h2 style="font-weight:bold; text-decoration:underline">Hover me</h2>
-        <div class="attribute">
-            <div class="attr" id="static">static</div>
-            <div class="attr"  id="relative">relative</div>
-            <div  class="attr"  id="absolute">absolute</div>
-            <div class="attr"  id="fixed">fixed</div>
-            <br/>
-            <div class="boxes">
-                <div class="box" style="width:100px; height:100px; background-color:black; border: 2px solid black;"></div>
-                <div id="it"></div>
-                <div class="box"style="width:100px; height:100px; background-color:black; border: 2px solid black;"></div>
-            </div>
-        </div>
-</div>
+    padding-bottom: 30px;"
+  >
+    <h2 style="font-weight:bold; text-decoration:underline">Hover me</h2>
+    <div class="attribute">
+      <div class="attr" id="static">
+        static
+      </div>
+      <div class="attr" id="relative">
+        relative
+      </div>
+      <div class="attr" id="absolute">
+        absolute
+      </div>
+      <div class="attr" id="fixed">
+        fixed
+      </div>
+      <br />
+      <div class="boxes">
+        <div
+          class="box"
+          style="width:100px; height:100px; background-color:black; border: 2px solid black;"
+        ></div>
+        <div id="it"></div>
+        <div
+          class="box"
+          style="width:100px; height:100px; background-color:black; border: 2px solid black;"
+        ></div>
+      </div>
+    </div>
+  </div>  
 
-    
+  <br/>
+
+  <div class="top"
+    style="display: flex;
+    align-items: center;
+    justify-content: center;">
+  <div class="wrapper"
+  style="background-color: white;
+    padding: 4px 30px;
+    border-radius: 20px;
+    padding-bottom: 30px;">
+      <h2 style="font-weight:bold; text-decoration:underline">Absolute</h2>
+      <h3 style="font-weight: bold;
+      background-color: black;
+      color: white;
+      margin-top: 4px;
+      margin-bottom:20px;
+      padding: 2px 4px;
+      width:fit-content;">default</h3>
+      <div class="parent"
+        style="width:fit-content; 
+        height:fit-content; 
+        text-align: center;
+        background-color:white; 
+        padding: 8px 8px;
+        font-weight: bold;
+        color: black;
+        border: 2px solid black;">
+            parent
+          <div class="child"
+          style="width:100px;
+          margin-bottom: 4px;
+          height:100px;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;"
+          ></div>
+          <div class="child"
+          style="width:100px;
+          height:100px;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;">this</div>
+      </div>
+      <h3 style="font-weight: bold;
+      background-color: black;
+      color: white;
+      margin-top: 4px;
+      padding: 2px 4px;
+      margin-top: 30px;
+      margin-bottom:20px;
+      width:fit-content;">this is absolute <br/>no offset</h3>
+      <div class="parent"
+        style="width:fit-content; 
+        height:fit-content; 
+        text-align: center;
+        background-color:white; 
+        padding: 8px 8px;
+        font-weight: bold;
+        color: black;
+        border: 2px solid black;">
+            parent
+          <div class="child"
+          style="width:100px;
+          margin-bottom: 4px;
+          height:100px;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;"
+          ></div>
+          <div class="child"
+          style="width:100px;
+          height:100px;
+          position:absolute;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;">this</div>
+  </div>
+
+  <h3 style="font-weight: bold;
+      background-color: black;
+      color: white;
+      margin-top: 4px;
+      padding: 2px 4px;
+      margin-top: 30px;
+      margin-bottom:20px;
+      width:fit-content;">this is absolute <br/>yes offset</h3>
+      <div class="parent"
+        style="width:fit-content; 
+        height:fit-content; 
+        text-align: center;
+        background-color:white; 
+        padding: 8px 8px;
+        font-weight: bold;
+        color: black;
+        border: 2px solid black;">
+            parent
+          <div class="child"
+          style="width:100px;
+          margin-bottom: 4px;
+          height:100px;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;"
+          ></div>
+          <div class="child"
+          style="width:100px;
+          height:100px;
+          position:absolute;
+          bottom:80px;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;">this</div>
+  </div>
+
+
+
+  <h3 style="font-weight: bold;
+      background-color: black;
+      color: white;
+      margin-top: 4px;
+      padding: 2px 4px;
+      margin-top: 30px;
+      margin-bottom:20px;
+      width:fit-content;">parent is relative <br/> this is absolute <br/>yes offset</h3>
+      <div class="parent"
+        style="width:fit-content; 
+        height:fit-content; 
+        text-align: center;
+        position: relative;
+        background-color:white; 
+        padding: 8px 8px;
+        font-weight: bold;
+        color: black;
+        border: 2px solid black;">
+            parent
+          <div class="child"
+          style="width:100px;
+          margin-bottom: 4px;
+          height:100px;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;"
+          ></div>
+          <div class="child"
+          style="width:100px;
+          height:100px;
+          position:absolute;
+          bottom:80px;
+          background-color:black;
+          color:white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;">this</div>
+  </div>
+
+  </div>
 </body>
 </html>
