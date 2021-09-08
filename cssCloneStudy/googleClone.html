@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            background-color: #202124;
+            margin: 0;
+            padding: 0;
+            color: rgb(235, 235, 235);
+            min-width: 400px;
+            font-size: 14px;
+        }
+        a:visited{
+            text-decoration: none;
+        }
+       
+        button{
+            background-color: #303134;
+            color:rgb(235, 235, 235);
+            border: none;
+            border-radius: 4px;
+            padding: 10px 16px;
+        }
+        input{
+            border: none;
+            background-color: transparent;
+            outline: none;
+            color: white;
+            font-size: 16px;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 10px 0
+        }
+        header >div{
+            font-size: 14px;
+            margin-right: 20px;
+        }
+        header > div.profile{
+            width: 40px;
+            height: 40px;
+            background-color: rgb(27, 96, 66);
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+        }
+        .main{
+            margin-top: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+        .main >div{
+            margin-bottom: 30px;
+        }
+  
+        .main > div> a{
+            color: rgb(154, 178, 230);
+            text-decoration: none;
+        }
+        .logo{
+            font-size: 80px;
+            font-weight: bolder;
+        }
+        .search_wrapper{
+            border:1px solid rgb(109, 109, 109);
+            border-radius: 40px;
+            width: 450px;
+            padding: 8px 16px;
+            display: flex;
+        }
+        .search_wrapper > div{
+            font-size: 18px;
+        }
+        .search_wrapper > input{
+            width: 400px;
+        }
+        .search_wrapper:hover{
+            background-color: #303134;
+            border: none;
+            border:1px solid #303134;
+            box-shadow: 3px 3px 2px rgb(26, 26, 26);
+        }
+
+        footer{
+            background-color: rgb(18, 18, 19);
+            height: 150px;
+            width: 100%;
+            bottom: 0;
+            position: absolute;
+        }
+        footer > a{
+            color: rgb(154, 178, 230);
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+            <div><a>Gmail</a></div>
+            <div><a>이미지</a></div>
+            <div><a>메뉴</a></div>
+            <div class="profile"><a>프로필</a></div>
+    </header>
+    <div class="main">
+            <div class="logo">Google</div>
+            <div class="search_wrapper">
+                <div>🔍</div>
+                <input/>
+                <div>⌨️</div>
+                <div style="margin-left: 12px;">🎙</div>
+            </div>
+            <div>
+                <button>Google 검색</button>
+                <button style="margin-left: 8px;">I'm Felling Lucky</button>
+            </div>
+            <div>코로나19 백신, 무엇이 궁금하신가요? <a href="#">올바른 정보 확인하기</a></div>
+            <div>Google 제공 서비스: <a href="#">English</a></div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
