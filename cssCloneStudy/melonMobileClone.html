@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melon</title>
+    <style>
+    @media (min-width:768px) {
+            
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    body,html{
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        width: 100%;
+    }
+    header{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid gray;
+    }
+    .header{
+        padding: 4px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav{
+        padding: 4px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .album_wrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .album{
+        margin-bottom: 12px;
+    }
+    .thumnail{
+        width: 150px;
+        height: 150px;
+        background-color: azure;
+        border: 16px;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div>메뉴</div>
+            <div>이용권</div>
+            <div>Melon</div>
+            <div>찾기</div>
+        </div>
+        <nav>
+            <li>홈</li>
+            <li>최신 음악</li>
+            <li>멜론차트</li>
+            <li>뮤직비디오</li>
+            <li>티켓</li>
+        </nav>
+    </header>
+    <main>
+        <ul class="album_wrapper">
+            <li>
+                <div class="album">
+                    <div class="thumnail"></div>
+                    <div class="title">타이틀</div>
+                    <div class="artist">가수</div>
+                </div>
+            </li>
+            <li>
+                <div class="album">
+                    <div class="thumnail"></div>
+                    <div class="title">타이틀</div>
+                    <div class="artist">가수</div>
+                </div>
+            </li>
+        </ul> 
+        <ul class="album_wrapper">
+            <li>
+                <div class="album">
+                    <div class="thumnail"></div>
+                    <div class="title">타이틀</div>
+                    <div class="artist">가수</div>
+                </div>
+            </li>
+            <li>
+                <div class="album">
+                    <div class="thumnail"></div>
+                    <div class="title">타이틀</div>
+                    <div class="artist">가수</div>
+                </div>
+            </li>
+        </ul> 
+        <ul class="album_wrapper">
+            <li>
+                <div class="album">
+                    <div class="thumnail"></div>
+                    <div class="title">타이틀</div>
+                    <div class="artist">가수</div>
+                </div>
+            </li>
+            <li>
+                <div class="album">
+                    <div class="thumnail"></div>
+                    <div class="title">타이틀</div>
+                    <div class="artist">가수</div>
+                </div>
+            </li>
+        </ul> 
+    </main>
+</body>
+</html>

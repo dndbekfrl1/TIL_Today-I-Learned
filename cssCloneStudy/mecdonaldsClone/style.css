@@ -1,0 +1,291 @@
+:root {
+  --red: #db0006;
+  --yellow: #ffbd0d;
+  --green: #264a36;
+  --gray: #f8f8f8;
+  --darkgray: #808080;
+  --black: #292929;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  min-width: 1200px;
+}
+header {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 150px;
+}
+
+.navWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+nav {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav > .logo {
+  float: left;
+}
+
+.menuWrapper {
+  justify-items: center;
+}
+.menuWrapper > ul {
+}
+
+ul.menu {
+  float: left;
+  font-size: 22px;
+  font-weight: bold;
+}
+ul.menu > li {
+  margin-right: 100px;
+}
+
+ul.menu2 {
+  position: relative;
+  float: right;
+}
+ul.menu2 > li {
+  margin-left: 10px;
+}
+.menuWrapper > ul > li {
+  float: left;
+}
+
+ul.men2 > li {
+}
+
+/*
+.navWrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  background-color: white;
+}
+ nav {
+  width: 90%;
+  height: 134px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--black);
+}
+ul.menu > li {
+  margin-left: 100px;
+}
+ul.menu2 > li {
+  margin-left: 10px;
+}
+
+nav > ul > li {
+  display: list-item;
+  float: left;
+} */
+
+.btn {
+  font-size: 16px;
+  border-radius: 18px;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  width: 56px;
+  text-align: center;
+}
+.red {
+  background-color: var(--red);
+}
+.yellow {
+  background-color: var(--yellow);
+}
+.green {
+  background-color: var(--green);
+}
+
+.banner {
+  height: 220px;
+  width: 100%;
+  background-image: url(https://www.mcdonalds.co.kr/uploadFolder/images/menu/2020/bg_visual_menu01.jpg);
+  background-position: 50% 50%;
+}
+
+div.main {
+  width: 100%;
+  margin: 0 0 60px 0;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.contentWrapper {
+  width: 1200px;
+  height: 100%;
+  padding: 0 36px;
+}
+
+ul.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 0;
+  font-size: 22px;
+}
+
+ul.tab > li > a {
+  color: var(--black);
+  font-weight: bold;
+  margin-right: 100px;
+}
+
+.items {
+  width: 100%;
+}
+
+.items > ul > li {
+  float: left;
+}
+
+.card {
+  background-color: #f8f8f8;
+  width: 380px;
+  padding: 22px 0 48px 0;
+  margin: 8px 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  color: var(--black);
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.eng {
+  font-size: 14px;
+  color: var(--darkgray);
+}
+
+div.plusBtn {
+  margin-top: 80px;
+  background-color: var(--yellow);
+  border-radius: 100%;
+  width: 88px;
+  height: 88px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.sideUtil {
+  position: fixed;
+  right: 5%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sideUtilTop {
+  margin-top: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 4px solid var(--black);
+}
+.deliveryWrapper {
+  width: 90px;
+  height: 90px;
+  background-image: url(https://www.mcdonalds.co.kr/kor/images/common/btn_delivery_01.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+footer {
+  width: 100%;
+  height: 280px;
+  background-color: var(--black);
+}
+
+.footerWrapper {
+  display: flex;
+  padding: 60px 120px;
+  font-size: 14px;
+}
+.footerWrapper > ul {
+  margin-right: 44px;
+}
+.footerWrapper > ul > li {
+  margin: 0 0 8px 0;
+}
+.footerWrapper > .info1 {
+  color: white;
+  font-weight: bold;
+}
+.footerWrapper > .info2 {
+  color: var(--darkgray);
+}
+.footerWrapper > .info3 {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+
+.footerWrapper > .info3 > li {
+  margin-left: 10px;
+}
+
+#dd {
+  display: block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(https://www.mcdonalds.co.kr/kor/images/common/ico_sns.png);
+}
+
+#ddd {
+  display: block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background-position: 0 -40px;
+  background: url(https://www.mcdonalds.co.kr/kor/images/common/ico_sns.png);
+}
