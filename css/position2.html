@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+         margin: 0;
+         padding: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+        }
+        .relative{
+            position: relative;
+        }
+        .block{
+            display: block;
+        }
+        .navWrapper{
+            width: 400px;
+            height: 120px;
+            background-color: rgb(71, 108, 255,0.4);
+        }
+        .absolute{
+            position:absolute;
+        }
+        .nav{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(127, 131, 255);
+        }
+        .main{
+            width: 400px;
+            height: 220px;
+            border: 4px solid;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>
+            
+        </h3>
+        <div class="wrapper">
+            <div class="navWrapper">
+                <div class="nav">
+                    nav wrapper <br/>
+                    nav</div>
+            </div>
+            <div class="main">main</div>
+        </div>
+        <br/>
+        <br/>
+    </div>
+
+    <div>
+        <div class="wrapper">
+            <div class="navWrapper absolute">
+                <div class="nav">
+                    nav wrapper &nbsp; - &nbsp; absolute
+                    <br/>
+                    nav
+                </div>
+            </div>
+            <div class="main">main</div>
+        </div>
+        <br/>
+        <br/>
+    </div>
+
+    <div>
+        <div class="wrapper">
+            <div class="navWrapper relative">
+                <div class="nav absolute">
+                    nav wrapper &nbsp; - &nbsp; relative
+                    <br/>
+                    nav &nbsp; - &nbsp; absolute
+                </div>
+            </div>
+            <div class="main">
+                main
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </div>
+</body>
+</html>
