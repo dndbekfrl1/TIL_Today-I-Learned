@@ -50,17 +50,12 @@ nav {
   align-items: center;
   justify-content: center;
 }
-
 nav > .logo {
   float: left;
 }
-
 .menuWrapper {
   justify-items: center;
 }
-.menuWrapper > ul {
-}
-
 ul.menu {
   float: left;
   font-size: 22px;
@@ -69,7 +64,6 @@ ul.menu {
 ul.menu > li {
   margin-right: 100px;
 }
-
 ul.menu2 {
   position: relative;
   float: right;
@@ -80,10 +74,6 @@ ul.menu2 > li {
 .menuWrapper > ul > li {
   float: left;
 }
-
-ul.men2 > li {
-}
-
 /*
 .navWrapper {
   position: fixed;
