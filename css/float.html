@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        li{
+            list-style: none;
+        }
+
+
+        nav{
+            width: 800px;
+            height: 160px;
+            border: 1px solid;
+        }
+        .logo{
+            position: relative;
+            left: 10px;
+            top: 28px;
+            float: left;
+        }
+        .menuWrapper{
+            border: 1px solid;
+            padding: 45px 0;
+        }
+        ul.menu{
+            display: inline-block;
+            border: 1px solid tomato;
+        }
+        ul.menu > li {
+            font-size: 22px;
+            font-weight: bold;
+            float: left;
+        }
+        ul.menu2 {
+            position: relative;
+            border: 1px solid tomato;
+            float: right;
+            text-align: center;
+        }
+        ul.menu2 >li{
+            float: left;
+        }
+        .btn{
+            width: 80px;
+            border: 1px solid;
+            display: inline-block;
+            text-align: center;
+            line-height: 34px;
+        }
+    </style>
+</head>
+<body>
+    <h3>float 중앙정렬</h3>
+    <nav>
+        <div class="logo"><img src="https://www.mcdonalds.co.kr/kor/images/common/logo.png"/></div>
+        <div class="menuWrapper">
+            <ul class="menu">
+                <li>Menu</li>
+                <li>Store</li>
+                <li>What's new</li>
+                <li>Story</li>
+            </ul>
+            <ul class="menu2">
+                <li class="btn red">임차문의</li>
+                <li class="btn yellow">Recruit</li>
+                <li class="btn green">Eng</li>
+            </ul>
+        </div>
+    </nav>
+
+</body>
+</html>
