@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .header{
+            background-color: blueviolet;
+            color: white;
+            padding: 15px;
+        }
+        .main{
+            overflow: auto;
+        }
+        
+        .menu{
+            padding: 15px;
+            float: left;
+            width: 100%;
+        }
+        .menu ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li{
+            padding: 8px;
+            margin-bottom: 8px;
+            background-color: green;
+            color: white;
+        }
+        .content{
+            float: left;
+            width: 100%;
+            padding: 15px;
+        }
+        .about{
+            padding: 15px;
+            float: left;
+            width: 100%;
+        }
+        .aside{
+            background-color: green;
+            padding: 15px;
+        }
+      
+        .footer{
+            background-color: green;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media only screen and (min-width:600px){
+            /*for tablets*/
+            .menu{width: 20%;}
+            .content{width: 80%;}
+            .about{width: 100%;}
+        }
+        @media only screen and (min-width:768px){
+            /*for desktop*/
+            .menu{width: 15%;}
+            .content{width: 60%;}
+            .about{width: 25%;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+
+    <div class="main">
+        <div class="menu">
+            <ul>
+                <li>No.01</li>
+                <li>No.02</li>
+                <li>No.03</li>
+                <li>No.04</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>The City</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates cupiditate reprehenderit, voluptatibus laudantium.</p>
+        </div>
+        <div class="about">
+            <div class="aside">
+                <h2>What?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h2>Where?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h2>How?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+</body>
+</html>
