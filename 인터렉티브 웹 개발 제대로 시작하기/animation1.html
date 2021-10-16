@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sample-ani{
+            0%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate(300px,0);
+            }
+            100%{
+                transform: translate(400px,500px);
+            }
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background: #fff000;
+            border: 2px solid #000;
+            animation: sample-ani 2s linear 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    <div class="box">Box</div>
+</body>
+</html>
