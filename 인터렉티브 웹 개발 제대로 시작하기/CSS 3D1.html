@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .world{
+            width: 80vw;
+            height: 80vh;
+            background: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* perspective: 800px; */
+        }
+        .card{
+            background: red;
+            width: 100px;
+            height: 150px;
+            border-radius: 0.5em;
+            font-size: 1.5rem;
+            margin: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotateY(40deg) perspective(800px);
+        }
+    </style>
+</head>
+<body>
+    <div class="world">
+        <div class="card">
+            CARD
+        </div>
+        <div class="card">
+            CARD
+        </div>
+        <div class="card">
+            CARD
+        </div>
+    </div>
+</body>
+</html>
