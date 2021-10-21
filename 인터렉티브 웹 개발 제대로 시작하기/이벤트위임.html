@@ -1,21 +1,3 @@
-<!--
-
-const char = document.querySelector('.characters')
-커스텀 속성을 부여
-char.setAttribute('data-id',123)
-
-querySelector()
-appendChild()
-removeChild()
-
--- class 다루기
-classList.add('') -> 기존 클래스에 추가
-className -> 기존 클래스 보존x
-
-classList.remove('') -> 클래스 삭제
-
-classList.toggle('') -> 클래스 토글 
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +27,7 @@ classList.toggle('') -> 클래스 토글
         .special {
             border: 10px dashed red;
         }
-       
+        
     </style>
 </head>
 <body>
@@ -65,7 +47,20 @@ classList.toggle('') -> 클래스 토글
     </div>
 
     <script>
-        // 직접 타이핑 해보세요
+        //window.addEventListener("load",()) -> 리소스 로드
+        //window.addEventListener("DOMContentLoaded",()) -> Dom이 로드됐을 때 
+
+        (function() {
+            const ilbuni = document.querySelector('.ilbuni:nth-child(3)');
+
+            const clickIlbuniHandler=()=>{
+                ilbuni.classList.toggle('special')
+            }
+
+            ilbuni.addEventListener("click",clickIlbuniHandler)
+        })();
+
+
     </script>
 </body>
 </html>

@@ -1,21 +1,3 @@
-<!--
-
-const char = document.querySelector('.characters')
-커스텀 속성을 부여
-char.setAttribute('data-id',123)
-
-querySelector()
-appendChild()
-removeChild()
-
--- class 다루기
-classList.add('') -> 기존 클래스에 추가
-className -> 기존 클래스 보존x
-
-classList.remove('') -> 클래스 삭제
-
-classList.toggle('') -> 클래스 토글 
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +13,8 @@ classList.toggle('') -> 클래스 토글
         }
         .characters {
             display: flex;
-            align-items: center;
             justify-content: space-around;
+            align-items: center;
             background: #fff000;
         }
         .ilbuni {
@@ -45,7 +27,7 @@ classList.toggle('') -> 클래스 토글
         .special {
             border: 10px dashed red;
         }
-       
+        
     </style>
 </head>
 <body>
@@ -59,13 +41,27 @@ classList.toggle('') -> 클래스 토글
         <div class="ilbuni c">
             <img src="images/ilbuni_2.png" alt="일분이">
         </div>
+        <div class="ilbuni d">
+            <img src="images/ilbuni_3.png" alt="일분이">
+        </div>
     </div>
-    <div class="ilbuni d">
-        <img src="images/ilbuni_3.png" alt="일분이">
-    </div>
+</div>
+
 
     <script>
-        // 직접 타이핑 해보세요
+        (function() {
+            const characters = document.querySelector('.characters');
+
+            function clickHandler(e){
+                console.log(this); //characters 객체 출력
+                console.log(e.currentTarget); //characters 객체 출력
+                console.log(e.target); //클릭한 요소 
+            }
+
+            characters.addEventListener("click",clickHandler)
+        })();
+
+
     </script>
 </body>
 </html>
