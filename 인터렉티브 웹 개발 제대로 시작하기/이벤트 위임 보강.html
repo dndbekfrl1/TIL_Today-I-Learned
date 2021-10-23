@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            background-color: gray;
+            padding: 10px;
+        }
+        .menu-btn{
+
+            background:rgb(200, 255, 71);
+            margin: 4px;
+        }
+        /*방법2*/
+        /* .icon{
+            pointer-events: none;
+        }
+        span{
+            pointer-events: none;
+        } */
+    </style>
+</head>
+<body>
+    <div class="menu">
+        
+    </div>
+</body>
+<script>
+    const menu = document.querySelector('.menu');
+    function clickHandler(e){
+    //이벤트 객체가 할당
+        // console.log(e.target); //span.btn-label 또는 img.icon
+        // console.log(e.currentTarget); //div.menu
+
+        //data-value 속성을 추가했다.
+        // console.log(e.target.getAttribute("data-value"));
+        // console.log(e.target.dataset.value);
+
+        //방법1) 이미지나 텍스트 클릭했다면, 부모 엘리먼트를 조사한다 
+        let elem = event.target;
+        while(!elem.classList.contains('menu-btn')){
+            elem = elem.parentNode;
+            if(elem.nodeName==='BODY'){
+                elem=null;
+                return;
+            }
+        }
+        //.menu 클릭시 undefunde 에러 -> nodeName이 BODY면 return
+        console.log(elem.dataset.value);
+
+        //방법2) 이벤트가 발생되지 않을 요소(icon, span)에 css pointer-events를 none
+
+        //일반적으로 방법2를 사용하면 쉽게 해결가능
+        //단, menu-btn pointer-events none을 부여하면, 하위 요소는 타겟을 잡을수 없음. 클릭이 불가
+    }
+    menu.addEventListener("click",clickHandler);
+
+    //이벤트 위임은 동적인 html 요소에도 유효하다! 
+    //방법2 의 한계
+    window.addEventListener("click",()=>{
+            const htmlStr=`
+                <div class="menu-btn" data-value="1">
+                <img src="./images/ilbuni_1.png" alt="" class="icon">
+                    <span class="btn-label">일분이 1</span>
+                </img>
+            </div>
+            <div class="menu-btn" data-value="2">
+                <img src="./images/ilbuni_2.png" alt="" class="icon">
+                    <span class="btn-label">일분이 2</span>
+                </img>
+            </div>
+            <div class="menu-btn" data-value="3">
+                <img src="./images/ilbuni_3.png" alt="" class="icon">
+                    <span class="btn-label">일분이 3</span>
+                </img>
+            </div>
+            `
+            menu.innerHTML=htmlStr;
+        })
+
+</script>
+</html>
