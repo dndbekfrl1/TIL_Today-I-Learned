@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .stage{
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 75vw;
+            /*vw 기준으로 4:3*/
+            background: #fff000
+        }
+        @keyframes moving{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(90vw);
+            }
+        }
+
+        .ilbuni{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: contain;
+            animation: moving infinite alternate;
+        }
+       .ilbuni1{
+           left: 5%;
+           bottom: 5%;
+           background-image: url(./images/ilbuni_1.png);
+           animation-duration: 2s;
+       }
+       .ilbuni2{
+           left: 10%;
+           bottom: 3%;
+            background-image: url(./images/ilbuni_2.png);
+            animation-duration: 3s;
+       }
+       .ilbuni3{
+           left: 7%;
+           bottom: 10%;
+           background-image: url(./images/ilbuni_3.png);
+           animation-duration: 4s;
+       }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="ilbuni ilbuni1"></div>
+        <div class="ilbuni ilbuni2"></div>
+        <div class="ilbuni ilbuni3"></div>
+    </div>
+    <script>
+        (function(){
+            const stage =document.querySelector('.stage');
+        
+            /**
+             * 이벤트 위임을 통해 다음 반복문을 개선해보자
+                for(let i=0;i<ilbuniGroup.length;i++){
+                    ilbuniGroup[i].addEventListener("click",clickHandler);
+                }
+             * 이벤트 위임은 stage에 위임한다
+             * 
+            */
+           function clickHandler(e){
+               if(e.target.classList.contains('ilbuni')){
+                   stage.removeChild(e.target);
+               }
+           }
+           stage.addEventListener("click",(e)=>{
+               console.log(this);//<div class='stage'></div>
+               console.log(e.currentTarget) //div.stage
+               console.log(e.target)//div.ilbuni1.ilbunix
+
+               //stage.removeChild(e.target); //stage클릭시 에러가 발생함 -> 예외처리를 해주자
+
+               clickHandler(e);
+
+           })
+
+
+        })();
+    </script>
+</body>
+</html>
