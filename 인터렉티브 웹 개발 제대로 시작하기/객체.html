@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object</h1>
+    <script>
+        /*
+         * Object: 함수, 배열 등등
+         * 객체란? 
+         * 속성: {이름, 성별, 키, 나이, 동작} 으로 이뤄짐
+         * 
+        */
+
+        //생성자
+       function Person(name,age){
+            this.name=name;
+            this.age=age;
+       }
+       //introduce() 는 공유하는게 더 메모리에 좋지 않을까?
+       //공통 메서드
+       //prototype은 개별 인스턴스들이 공유함
+       Person.prototype.introduce=function(){
+            console.log(this.name,"안녕하세요",this.age)
+        }
+
+       //인스턴스
+       const person1 = new Person("웅","23");
+       const person_={
+           name:"일분이",
+           age:"10",
+           introduce:function(){
+               console.log(this.name,"안녕하세요",this.age)
+           }
+       }
+
+       function Card(num,color){
+           this.num=num;
+           this.color=color;
+        //    this.init();
+       }
+    //    Card.prototype={
+    //        constructor:Card,
+    //        init: function(){
+    //            const mainElem = document.createElement('div');
+    //            mainElem.style.color=this.color;
+    //            mainElem.innerHTML=this.num;
+    //            mainElem.classList.add('card');
+    //            document.body.appendChild(mainElem);
+    //        }
+    //    }
+
+       const card1 = new Card(1,"green");
+       console.log(card1);
+       const card2 = new Card(2,"blue");
+/**
+ * prototype 선언 o
+ * Card
+color: "green"
+num: 1
+[[Prototype]]: Object
+constructor: ƒ Card(num,color)
+arguments: null
+caller: null
+length: 2
+name: "Card"
+prototype:
+constructor: ƒ Card(num,color)
+arguments: null
+caller: null
+length: 2
+name: "Card"
+prototype: {constructor: ƒ, init: ƒ}
+[[FunctionLocation]]: 객체.html:54
+[[Prototype]]: ƒ ()
+[[Scopes]]: Scopes[2]
+init: ƒ ()
+arguments: null
+caller: null
+length: 0
+name: "init"
+ */
+
+ /**
+  *  * prototype 선언 x
+  * Card {num: 1, color: 'green'}
+color: "green"
+num: 1
+[[Prototype]]: Object
+constructor: ƒ Card(num,color)
+arguments: null
+caller: null
+length: 2
+name: "Card"
+prototype:
+constructor: ƒ Card(num,color)
+arguments: null
+caller: null
+length: 2
+name: "Card"
+prototype:
+constructor: ƒ Card(num,color)
+arguments: null
+caller: null
+length: 2
+name: "Card"
+prototype: {constructor: ƒ} 
+  */
+
+
+    </script>
+</body>
+</html>
