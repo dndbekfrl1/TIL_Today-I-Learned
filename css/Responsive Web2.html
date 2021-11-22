@@ -9,6 +9,12 @@
         *{
             box-sizing: border-box;
         }
+        .code{
+            background-color: darkgrey;
+            color: black;
+            padding: 15px;
+            margin-bottom: 8px;
+        }
         .header{
             background-color: blueviolet;
             color: white;
@@ -71,6 +77,42 @@
     </style>
 </head>
 <body>
+
+    <h1>반응형 웹</h1>
+    <h3>미디어 쿼리</h3>
+    <p>모바일을 우선 고려하자</p>
+    <img src="https://poiemaweb.com/img/media-query-breakpoints.jpg"/>
+    <div class="code">
+    <code>
+        /* Extra small devices (phones, 600px and down) */
+        <br/>
+        @media only screen and (max-width: 600px) {...}
+        <br/>
+        <br/>
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        <br/>
+        @media only screen and (min-width: 600px) {...}
+        <br/>
+        <br/>
+        /* Medium devices (landscape tablets, 768px and up) */
+        <br/>
+        @media only screen and (min-width: 768px) {...}
+        <br/>
+        <br/>
+        /* Large devices (laptops/desktops, 992px and up) */
+        <br/>
+        @media only screen and (min-width: 992px) {...}
+        <br/>
+        <br/>
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        <br/>
+        @media only screen and (min-width: 1200px) {...}
+    </code>
+</div>
+
+
+
+
     <div class="header">
         <h1>Header</h1>
     </div>
@@ -103,4 +145,4 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
 </body>
-</html>
+</html>     

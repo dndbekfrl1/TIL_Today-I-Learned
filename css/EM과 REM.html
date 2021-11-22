@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>             
+</head>
+<body>
+    기본적으로 16px이 지정됨 
+    <li>
+        em - 부모에게 상대적
+        8em = 16px * 8 = 128px
+        0.5em = 128px * 0.5 = 64px
+    </li>
+    <li>
+        rem - root에 상대적 
+        
+    </li>
+    <li>
+        vw - view port width
+    </li>
+    <li>
+        vh - view port height
+    </li>
+
+    <h3>
+        부모요소? - %,em
+        브라우저? - v rem
+
+        요소의 높이? - % v
+        폰트사이즈? - em, rem 
+    </h3>
+
+    em vs rem 
+
+    좋아요 버튼 구현시
+    rem - 고정
+    em - 변경 
+
+    <div>
+        <h1>em 데모</h1>
+        <div class="level1">
+            <h1>level1</h1>
+            <div class="level2">
+                <h1>level2</h1>
+                <div class="level3">
+                    <h1>level3</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

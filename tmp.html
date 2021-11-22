@@ -1,0 +1,41 @@
+<button id="btn0">btn0</button>
+<button id="btn1">btn1</button>
+<button id="btn2">btn2</button>
+<script>
+    var btns = [
+    document.getElementById("btn0"),
+    document.getElementById("btn1"),
+    document.getElementById("btn2"),
+  ];
+
+  function setClick() {
+    for (var i = 0; i < 3; i++) {
+        console.log("in loop",i);
+      btns[i].onclick = function () {
+        console.log(i);
+      };
+      /**
+      in loop 0
+      in loop 1
+      in loop 2
+      3
+      */
+    }
+  }
+  function setClick_() {
+    for (let i = 0; i < 3; i++) {
+      btns[i].onclick = function () {
+        console.log(i);
+      };
+      console.log("in loop",i);
+      /**
+      in loop 0
+      in loop 1
+      in loop 2
+      2||1||0
+      */
+    }
+  }
+
+  setClick();
+</script>
