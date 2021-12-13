@@ -15,7 +15,7 @@ export const GetPokemon = (pokemon:string)=>async (dispatch:Dispatch<PokemonDisp
         })
     }
     catch(e){
-        console.log("e",e)
         dispatch({type:POKEMON_FAIL})
+
     }
 }
