@@ -1,0 +1,36 @@
+
+/* Card */
+.Card{
+    border: 1px solid lightgray;
+}
+.Card--highlight{
+    border-color: hotpink;
+}
+
+/* Heading */
+.Card__heading{
+    margin: 20px;
+}
+.Card__heading--highlight{
+    color: hotpink;
+}
+
+/* Button */
+.Card__button{
+    border: none;
+    background-color: hotpink;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+/* Image */
+.Card__image{
+    width: 100%;
+}
+.Card__image--avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 13px 20px 0;
+    float: left;
+}
