@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
   console.log("a user connected");
+  io.emit("connected");
 
   socket.on("chat message", (msg) => {
     console.log("msg", msg);
@@ -17,6 +18,7 @@ io.on("connection", (socket) => {
   });
   socket.on("disconnect", () => {
     console.log("user disconnected");
+    io.emit("disconnected");
   });
 });
 http.listen(port, () => {

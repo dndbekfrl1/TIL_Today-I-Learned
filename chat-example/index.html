@@ -36,6 +36,12 @@
           input.value = '';
         }
       });
+      socket.on('connected',()=>{
+        var item = document.createElement('li');
+        item.textContent = "connected";
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      })
 
       socket.on('chat message', function(msg) {
         var item = document.createElement('li');
@@ -43,6 +49,12 @@
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
       });
+      socket.on('disconnected',()=>{
+        var item = document.createElement('li');
+        item.textContent = "disconnected";
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      })
     </script>
   </body>
 </html>
