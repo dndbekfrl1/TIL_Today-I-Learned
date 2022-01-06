@@ -14,13 +14,13 @@ function TodoList (){
  const todoList = useRecoilValue(todoListState);
  return(
      <>
-     adfas
         <TodoListStats />
         <TodoListFilters />
         <TodoItemCreator />
 
         {todoList.map((todoItem)=>{
-            <TodoItem key={todoItem.id} item={todoItem}/>
+            return(
+            <TodoItem key={todoItem.id} item={todoItem}/>)
         })}
      </>
  );
