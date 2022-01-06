@@ -74,5 +74,6 @@
     "utility": "cpp",
     "vector": "cpp",
     "thread": "cpp"
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
