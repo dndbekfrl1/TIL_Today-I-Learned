@@ -10,6 +10,8 @@ function TodoItem ({item}){
             ...item,
             text:value,
         });
+
+        setTodoList(newList);
     };
 
     const toggleItemCompletion = () => {
